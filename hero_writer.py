@@ -3,7 +3,7 @@ import requests
 from typing import List
 import asyncio
 from concurrent.futures import ProcessPoolExecutor
-import datetime
+from datetime import datetime, timedelta
 from urllib.request import urlopen
 
 import requests
