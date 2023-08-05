@@ -60,8 +60,8 @@ def clean_html(url):
             # string to dictionary
             dic = json.loads(doc)
             result_dict = dic['result']['trades']
-
-
+        else:
+            break
     soup = BeautifulSoup(response.text, 'html.parser')
     text = ' '.join(soup.stripped_strings)
     return text
