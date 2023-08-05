@@ -120,7 +120,7 @@ def writer():
         content = clean_html(s['link'])
         full_content = f"제목: {s['title']}\n발췌: {s['snippet']}\n전문: {content}"
 
-        full_content_truncated = truncate_text(full_content, max_tokens=3500)
+        full_content_truncated = truncate_text(full_content, max_tokens=3000)
 
         summary = summarizer.run(text=full_content_truncated)
 
