@@ -112,7 +112,7 @@ def writer():
     data_from_nasa = requests.get(nasa_url).json()
 
 
-    search_results = search.results("오늘의 주식 종목", num_results=10)
+    search_results = search.results("오늘 급등주 테마주 주식 종목", num_results=10)
     i = 0
     record=[0,0,0,0,0,0,0,0,0,0]
     for s in search_results:
@@ -149,30 +149,19 @@ def writer():
 
 
 <hr contenteditable="false" data-ke-type="horizontalRule" data-ke-style="style3" />
-<h3 style="text-align: center;" data-ke-size="size23"><br /><span style="font-family: 'Noto Serif KR';"><b>{record[1]['title']} </b></span></h3>
-<p style="text-align: center;" data-ke-size="size16"><span style="font-family: 'Noto Serif KR';"> </span><br /><span style="font-family: 'Noto Serif KR';">
- </br>{record[1]['summary']}  </span></p>
-<p>&nbsp;</p>
-<p style="text-align: center;" data-ke-size="size16"><span style="font-family: 'Noto Serif KR';"> </span><br /><span style="font-family: 'Noto Serif KR';">
-  </br>{record[1]['url']}  </span></p>
-<p>&nbsp;</p>
-
-<hr contenteditable="false" data-ke-type="horizontalRule" data-ke-style="style3" />
 <h3 style="text-align: center;" data-ke-size="size23"><br /><span style="font-family: 'Noto Serif KR';"><b>{record[2]['title']} </b></span></h3>
 <p style="text-align: center;" data-ke-size="size16"><span style="font-family: 'Noto Serif KR';"> </span><br /><span style="font-family: 'Noto Serif KR';">
  </br>{record[2]['summary']}  </span></p>
-<p>&nbsp;</p>
 <p style="text-align: center;" data-ke-size="size16"><span style="font-family: 'Noto Serif KR';"> </span><br /><span style="font-family: 'Noto Serif KR';">
-  </br>{record[2]['url']}  </span></p>
+  <a href="{record[2]['url']}">원본 LINK 바로가기</a></span></p>
 <p>&nbsp;</p>
 
 <hr contenteditable="false" data-ke-type="horizontalRule" data-ke-style="style3" />
 <h3 style="text-align: center;" data-ke-size="size23"><br /><span style="font-family: 'Noto Serif KR';"><b>{record[3]['title']} </b></span></h3>
 <p style="text-align: center;" data-ke-size="size16"><span style="font-family: 'Noto Serif KR';"> </span><br /><span style="font-family: 'Noto Serif KR';">
  </br>{record[3]['summary']}  </span></p>
-<p>&nbsp;</p>
 <p style="text-align: center;" data-ke-size="size16"><span style="font-family: 'Noto Serif KR';"> </span><br /><span style="font-family: 'Noto Serif KR';">
-  </br>{record[3]['url']}  </span></p>
+  <a href="{record[3]['url']}">원본 LINK 바로가기</a></span></p>
 <p>&nbsp;</p>
 
 <hr contenteditable="false" data-ke-type="horizontalRule" data-ke-style="style3" />
@@ -181,7 +170,7 @@ def writer():
  </br>{record[4]['summary']}  </span></p>
 <p>&nbsp;</p>
 <p style="text-align: center;" data-ke-size="size16"><span style="font-family: 'Noto Serif KR';"> </span><br /><span style="font-family: 'Noto Serif KR';">
-  </br>{record[4]['url']}  </span></p>
+  <a href="{record[4]['url']}">원본 LINK 바로가기</a></span></p>
 <p>&nbsp;</p>
 
 <hr contenteditable="false" data-ke-type="horizontalRule" data-ke-style="style3" />
@@ -190,7 +179,7 @@ def writer():
  </br>{record[5]['summary']}  </span></p>
 <p>&nbsp;</p>
 <p style="text-align: center;" data-ke-size="size16"><span style="font-family: 'Noto Serif KR';"> </span><br /><span style="font-family: 'Noto Serif KR';">
-  </br>{record[5]['url']}  </span></p>
+  <a href="{record[5]['url']}">원본 LINK 바로가기</a></span></p>
 <p>&nbsp;</p>
 
 <hr contenteditable="false" data-ke-type="horizontalRule" data-ke-style="style3" />
@@ -199,7 +188,7 @@ def writer():
  </br>{record[6]['summary']}  </span></p>
 <p>&nbsp;</p>
 <p style="text-align: center;" data-ke-size="size16"><span style="font-family: 'Noto Serif KR';"> </span><br /><span style="font-family: 'Noto Serif KR';">
- </br>{record[6]['url']}  </span></p>
+ <a href="{record[6]['url']}">원본 LINK 바로가기</a></span></p>
 <p>&nbsp;</p>
 
 <hr contenteditable="false" data-ke-type="horizontalRule" data-ke-style="style3" />
@@ -208,7 +197,7 @@ def writer():
  </br>{record[7]['summary']}  </span></p>
 <p>&nbsp;</p>
 <p style="text-align: center;" data-ke-size="size16"><span style="font-family: 'Noto Serif KR';"> </span><br /><span style="font-family: 'Noto Serif KR';">
-  </br>{record[7]['url']}  </span></p>
+  <a href="{record[7]['url']}">원본 LINK 바로가기</a> </span></p>
 <p>&nbsp;</p>
 
 <hr contenteditable="false" data-ke-type="horizontalRule" data-ke-style="style3" />
@@ -217,7 +206,7 @@ def writer():
  </br>{record[8]['summary']}  </span></p>
 <p>&nbsp;</p>
 <p style="text-align: center;" data-ke-size="size16"><span style="font-family: 'Noto Serif KR';"> </span><br /><span style="font-family: 'Noto Serif KR';">
-  </br>{record[8]['url']}  </span></p>
+  <a href="{record[8]['url']}">원본 LINK 바로가기</a></span></p>
 <p>&nbsp;</p>
 
 <hr contenteditable="false" data-ke-type="horizontalRule" data-ke-style="style3" />
@@ -226,7 +215,7 @@ def writer():
  </br>{record[9]['summary']}  </span></p>
 <p>&nbsp;</p>
 <p style="text-align: center;" data-ke-size="size16"><span style="font-family: 'Noto Serif KR';"> </span><br /><span style="font-family: 'Noto Serif KR';">
-  </br>{record[9]['url']}  </span></p>
+  <a href="{record[9]['url']}">원본 LINK 바로가기</a></span></p>
 <p>&nbsp;</p>
 
 
