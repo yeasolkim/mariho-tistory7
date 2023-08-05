@@ -61,6 +61,7 @@ def clean_html(url):
             # string to dictionary
             dic = json.loads(doc)
             result_dict = dic['result']['trades']
+
         else:
             break
 
