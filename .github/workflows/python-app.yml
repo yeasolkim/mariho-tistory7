@@ -32,6 +32,6 @@ jobs:
         bash setup_env.sh
         python news_writer.py
         python stock_writer.py
-        python hero_writer.py
-       python trot_writer.py
+     #   python hero_writer.py
+       # python trot_writer.py
           
