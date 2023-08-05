@@ -4,10 +4,10 @@ from typing import List
 import asyncio
 from concurrent.futures import ProcessPoolExecutor
 import datetime
-import pynecone as pc
+
 import requests
 from bs4 import BeautifulSoup
-import pandas as pd
+
 from langchain import LLMChain
 from langchain.chat_models import ChatOpenAI
 from langchain.prompts.chat import (
@@ -91,119 +91,6 @@ summarizer = build_summarizer(llm)
 ###########################################################
 # Web
 
-class Data(pc.Model, table=True):
-    """A table for questions and answers in the database."""
-
-    title: str
-    content: str
-    url: str
-    summary: str
-    timestamp: datetime.datetime = datetime.datetime.now()
-
-
-class State(pc.State):
-    """The app state."""
-
-    is_working: bool = False
-    columns: List[str] = ["title", "url", "summary"]
-    topic: str = ""
-
-    async def handle_submit(self):
-        self.is_working = True
-        yield
-
-        topic = self.topic
-
-        search_results = search.results(topic, num_results=10)
-
-        with ProcessPoolExecutor() as executor:
-            with pc.session() as session:
-
-                for s in search_results:
-                    # {"title":~~~, "snippet":~~, "link":~~~}
-                    s = await asyncio.get_running_loop().run_in_executor(executor, task, s)
-                    record = Data(title=s['title'],
-                                  content=s['content'],
-                                  url=s['url'],
-                                  summary=s['summary'])
-                    session.add(record)
-                    session.commit()
-                    yield
-
-        self.is_working = False
-
-    @pc.var
-    def data(self) -> List[Data]:
-        """Get the saved questions and answers from the database."""
-        with pc.session() as session:
-            samples = (
-                session.query(Data)
-                .order_by(Data.timestamp.asc())
-                .all()
-            )
-            return [[s.title, s.url, s.summary] for s in samples]
-
-    def export(self):
-        with pc.session() as session:
-            samples = (
-                session.query(Data)
-                .all()
-            )
-            d = [{"title": s.title,
-                  "url": s.url,
-                  "summary": s.summary,
-                  "content": s.content} for s in samples]
-
-            df = pd.DataFrame(d)
-            df.to_excel("./exported.xlsx")
-
-    def delete_all(self):
-        with pc.session() as session:
-            samples = (
-                session.query(Data)
-                .all()
-            )
-
-            for s in samples:
-                session.delete(s)
-            session.commit()
-
-
-def index() -> pc.Component:
-    return pc.center(
-        pc.vstack(
-            pc.heading("뉴스 크롤링 & 요약 서비스", font_size="2em"),
-            pc.input(placeholder="topic", on_blur=State.set_topic),
-            pc.hstack(
-                pc.button("시작", on_click=State.handle_submit),
-                pc.button("excel로 export", on_click=State.export),
-                pc.button("모두 삭제", on_click=State.delete_all),
-            ),
-            pc.cond(State.is_working,
-                    pc.spinner(
-                        color="lightgreen",
-                        thickness=5,
-                        speed="1.5s",
-                        size="xl",
-                    ),),
-            pc.data_table(
-                data=State.data,
-                columns=State.columns,
-                pagination=True,
-                search=True,
-                sort=False,
-            ),
-            width="80%",
-            font_size="1em",
-        ),
-        padding_top="10%",
-    )
-
-
-# Add state and page to the app.
-#app = pc.App(state=State)
-#app.add_page(index)
-#app.compile()
 
 
 nasa_url = "https://api.nasa.gov/planetary/apod?api_key=rP3Xf5YvfJhYXyRHGVPtQkyJvof3TbqbKiUuuWBd"
