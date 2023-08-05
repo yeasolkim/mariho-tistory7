@@ -13,5 +13,4 @@ pynecone
 pandas
 bs4
 tiktoken==0.4.0
-googletrans==4.0.0-rc1
 duckduckgo-search
