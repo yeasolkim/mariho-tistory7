@@ -27,10 +27,10 @@ openai.api_key = "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"
 ###########################################################
 # Helpers
 def build_summarizer(llm):
-    system_message = "assistant는 user의 내용을 bullet point 3줄로 요약하라. 영어인 경우 한국어로 번역해서 요약하라."
+    system_message = "assistant는 user의 내용을 bullet point 3줄로 요약하라. 영어인 경우 한국어로 번역해서 요약하라. 농담을 섞은 친근한 말투로 작성하라."
     system_message_prompt = SystemMessage(content=system_message)
 
-    human_template = "{text}\n---\n위 내용을 bullet point로 3줄로 한국어로 요약해"
+    human_template = "{text}\n---\n위 내용을 bullet point로 3줄로 한국어로 요약하라. 농담을 섞은 친근한 말투로 작성하라."
     human_message_prompt = HumanMessagePromptTemplate.from_template(
         human_template)
 
