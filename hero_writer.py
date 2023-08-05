@@ -4,6 +4,7 @@ from typing import List
 import asyncio
 from concurrent.futures import ProcessPoolExecutor
 import datetime
+from urllib.request import urlopen
 
 import requests
 from bs4 import BeautifulSoup
@@ -49,7 +50,21 @@ def truncate_text(text, max_tokens=3000):
 
 
 def clean_html(url):
-    response = requests.get(url)
+    while (True):
+        try:
+            response = requests.get(url)
+            # requests 오류 시 아래 urlopen 을 사용 하여 data 불러 오는데 끊김이 없도록 실행
+        except:
+            page = urlopen(url)
+            # bytes to string
+            doc = page.read().decode('utf-8')
+            # string to dictionary
+            dic = json.loads(doc)
+            result_dict = dic['result']['trades']
+        else:
+            break
+
+
     soup = BeautifulSoup(response.text, 'html.parser')
     text = ' '.join(soup.stripped_strings)
     return text
