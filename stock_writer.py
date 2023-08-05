@@ -112,7 +112,7 @@ def writer():
     data_from_nasa = requests.get(nasa_url).json()
 
 
-    search_results = search.results("급등주", num_results=10)
+    search_results = search.results("오늘의 주식 종목", num_results=10)
     i = 0
     record=[0,0,0,0,0,0,0,0,0,0]
     for s in search_results:
@@ -137,7 +137,7 @@ def writer():
 
 
 
-    title2 = f"오늘 거래량이 폭발한 급등주! 테마주! 내일은?? ({data_from_nasa['date']})"
+    title2 = f"오늘 주목할 종목! 급등주? 테마주!? 내일은?? ({data_from_nasa['date']})"
 
     content2 = f'''
 <p style="text-align: center;" data-ke-size="size16"><span style="font-family: 'Noto Serif KR';"> </span><br />
@@ -146,14 +146,7 @@ def writer():
 링크도 있으니 함께 보시죠!</span></p>
 <p>&nbsp;</p>
 
-<hr contenteditable="false" data-ke-type="horizontalRule" data-ke-style="style3" />
-<h3 style="text-align: center;" data-ke-size="size23"><br /><span style="font-family: 'Noto Serif KR';"><b>{record[0]['title']} </b></span></h3>
-<p style="text-align: center;" data-ke-size="size16"><span style="font-family: 'Noto Serif KR';"> </span><br /><span style="font-family: 'Noto Serif KR';">
- </br>{record[0]['summary']}  </span></p>
-<p>&nbsp;</p>
-<p style="text-align: center;" data-ke-size="size16"><span style="font-family: 'Noto Serif KR';"> </span><br /><span style="font-family: 'Noto Serif KR';">
- </br>{record[0]['content']} </br>{record[0]['url']}  </span></p>
-<p>&nbsp;</p>
+
 
 <hr contenteditable="false" data-ke-type="horizontalRule" data-ke-style="style3" />
 <h3 style="text-align: center;" data-ke-size="size23"><br /><span style="font-family: 'Noto Serif KR';"><b>{record[1]['title']} </b></span></h3>

@@ -21,6 +21,7 @@ from langchain.utilities import DuckDuckGoSearchAPIWrapper
 import tiktoken
 import os
 import openai
+import random
 
 #openai.api_key = os.environ["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"]
 openai.api_key = "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"
@@ -114,8 +115,9 @@ def writer():
 
     data_from_nasa = requests.get(nasa_url).json()
 
+    star = random.choice(['임영웅', '정동원', '송가인', '영탁', '아이브', '장원영', 'BTS', '방탄소년단', '블랙핑크', '제니', '리사', '뉴진스', '여자아이돌', '남자아이돌', 'K-POP', '에스파', '유재석'])
 
-    search_results = search.results("임영웅", num_results=10)
+    search_results = search.results(star, num_results=10)
     i = 0
     record=[0,0,0,0,0,0,0,0,0,0]
     for s in search_results:
@@ -140,23 +142,15 @@ def writer():
 
 
 
-    title2 = f"임영웅 오늘 이슈! 싹 모았습니다 ({data_from_nasa['date']})"
+    title2 = f"{star} 의 모든 것 ! 오늘 이슈! 싹 모았습니다 "
 
     content2 = f'''
 <p style="text-align: center;" data-ke-size="size16"><span style="font-family: 'Noto Serif KR';"> </span><br />
-<span style="font-family: 'Noto Serif KR';">안녕하세요, 저의 최애가수 임영웅에게는 오늘 어떤 기사들이 작성되었을까요?!<br/> 
+<span style="font-family: 'Noto Serif KR';">안녕하세요, 오늘은 {star}에 대해 어떤 기사들이 작성되었을까요?!<br/> 
 오늘의 HOT한 뉴스만 정리했습니다<br />
 링크도 있으니 함께 보시죠!</span></p>
 <p>&nbsp;</p>
 
-<hr contenteditable="false" data-ke-type="horizontalRule" data-ke-style="style3" />
-<h3 style="text-align: center;" data-ke-size="size23"><br /><span style="font-family: 'Noto Serif KR';"><b>{record[0]['title']} </b></span></h3>
-<p style="text-align: center;" data-ke-size="size16"><span style="font-family: 'Noto Serif KR';"> </span><br /><span style="font-family: 'Noto Serif KR';">
- </br>{record[0]['summary']}  </span></p>
-<p>&nbsp;</p>
-<p style="text-align: center;" data-ke-size="size16"><span style="font-family: 'Noto Serif KR';"> </span><br /><span style="font-family: 'Noto Serif KR';">
- </br>{record[0]['content']} </br>{record[0]['url']}  </span></p>
-<p>&nbsp;</p>
 
 <hr contenteditable="false" data-ke-type="horizontalRule" data-ke-style="style3" />
 <h3 style="text-align: center;" data-ke-size="size23"><br /><span style="font-family: 'Noto Serif KR';"><b>{record[1]['title']} </b></span></h3>
@@ -242,8 +236,8 @@ def writer():
 
 
 <p style="text-align: center;" data-ke-size="size16"><span style="font-family: 'Noto Serif KR';"> </span><br />
-<span style="font-family: 'Noto Serif KR';">항상 가수님을 응원합니다!!.<br />
-내일도 저는  임영웅 관련 뉴스를 스크랩 해 올테니 또 만나요, 즐거운 하루 보내세요!</span></p>
+<span style="font-family: 'Noto Serif KR';">오늘 하루 {star} 관련해서는 이런 일이 있었군요!!.<br />
+내일도 핫한 뉴스를 스크랩 해 올테니 또 만나요, 즐거운 하루 보내세요!</span></p>
 <p>&nbsp;</p>
             '''
 
@@ -258,5 +252,5 @@ if __name__ == "__main__":
         category_id="953968",
         title="[취미]"+title2,
         content=content2,
-        tag='임영웅, 트로트, 영탁, 정동원, 송가인, 가수, 영웅, 미스터트롯, 미스터트로트'
+        tag='임영웅, 트로트, 영탁, 정동원, 송가인, 가수, 영웅, 미스터트롯, 미스터트로트, 연애, 스타, 연예인, 연예, 연예계, KPOP, 아이돌'
     )
