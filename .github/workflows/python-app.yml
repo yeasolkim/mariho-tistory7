@@ -30,8 +30,16 @@ jobs:
         OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       run: |
         bash setup_env.sh
+    - name: hero_writer
+      run: |
         python hero_writer.py
+    - name: news_writer
+      run: |
         python news_writer.py
+    - name: stock_writer
+      run: |
         python stock_writer.py
+    - name: trot_writer
+      run: |
        python trot_writer.py
           
