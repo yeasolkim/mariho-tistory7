@@ -109,9 +109,7 @@ summarizer = build_summarizer(llm)
 nasa_url = "https://api.nasa.gov/planetary/apod?api_key=rP3Xf5YvfJhYXyRHGVPtQkyJvof3TbqbKiUuuWBd"
 def writer():
 
-    data_from_nasa = requests.get(nasa_url).json()
-
-
+    start_date = (datetime.now()).strftime('%Y-%m-%d')
     search_results = search.results("오늘 트로트 뉴스", num_results=10)
     i = 0
     record=[0,0,0,0,0,0,0,0,0,0]
@@ -137,7 +135,7 @@ def writer():
 
 
 
-    title2 = f"오늘의 트로트 뉴스 모음! 핫 이슈만 모았습니다 ({data_from_nasa['date']})"
+    title2 = f"오늘의 트로트 뉴스 모음! 핫 이슈만 모았습니다 ({start_date})"
 
     content2 = f'''
 <p style="text-align: center;" data-ke-size="size16"><span style="font-family: 'Noto Serif KR';"> </span><br />

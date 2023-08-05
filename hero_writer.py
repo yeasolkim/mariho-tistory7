@@ -113,8 +113,6 @@ summarizer = build_summarizer(llm)
 nasa_url = "https://api.nasa.gov/planetary/apod?api_key=rP3Xf5YvfJhYXyRHGVPtQkyJvof3TbqbKiUuuWBd"
 def writer():
 
-    data_from_nasa = requests.get(nasa_url).json()
-
     star = random.choice(['임영웅', '정동원', '송가인', '영탁', '아이브', '장원영', 'BTS', '방탄소년단', '블랙핑크', '제니', '리사', '뉴진스', '여자아이돌', '남자아이돌', 'K-POP', '에스파', '유재석'])
 
     search_results = search.results(star, num_results=10)
