@@ -29,4 +29,5 @@ jobs:
         TI_ACCESS_TOKEN: ${{ secrets.TI_ACCESS_TOKEN }}
       run: |
         bash setup_env.sh
-        python writer.py
+        python news_writer.py
+          

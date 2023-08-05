@@ -6,3 +6,12 @@ python-dotenv==0.17.1
 requests==2.25.1
 soupsieve==2.2.1
 urllib3==1.26.4
+finance-datareader==0.9.6
+openai
+langchain
+pynecone
+pandas
+bs4
+tiktoken==0.4.0
+googletrans==4.0.0-rc1
+duckduckgo-search
