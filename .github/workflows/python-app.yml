@@ -27,6 +27,7 @@ jobs:
         TI_SECRET: ${{ secrets.TI_SECRET }}
         TI_CODE: ${{ secrets.TI_CODE }}
         TI_ACCESS_TOKEN: ${{ secrets.TI_ACCESS_TOKEN }}
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       run: |
         bash setup_env.sh
         python news_writer.py
