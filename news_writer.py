@@ -160,7 +160,7 @@ def writer():
  </br>{record[1]['summary']}  </span></p>
 <p>&nbsp;</p>
 <p style="text-align: center;" data-ke-size="size16"><span style="font-family: 'Noto Serif KR';"> </span><br /><span style="font-family: 'Noto Serif KR';">
- </br>{record[1]['content']} </br>{record[1]['url']}  </span></p>
+  </br>{record[1]['url']}  </span></p>
 <p>&nbsp;</p>
 
 <hr contenteditable="false" data-ke-type="horizontalRule" data-ke-style="style3" />
@@ -169,7 +169,7 @@ def writer():
  </br>{record[2]['summary']}  </span></p>
 <p>&nbsp;</p>
 <p style="text-align: center;" data-ke-size="size16"><span style="font-family: 'Noto Serif KR';"> </span><br /><span style="font-family: 'Noto Serif KR';">
- </br>{record[2]['content']} </br>{record[2]['url']}  </span></p>
+  </br>{record[2]['url']}  </span></p>
 <p>&nbsp;</p>
 
 <hr contenteditable="false" data-ke-type="horizontalRule" data-ke-style="style3" />
@@ -178,7 +178,7 @@ def writer():
  </br>{record[3]['summary']}  </span></p>
 <p>&nbsp;</p>
 <p style="text-align: center;" data-ke-size="size16"><span style="font-family: 'Noto Serif KR';"> </span><br /><span style="font-family: 'Noto Serif KR';">
- </br>{record[3]['content']} </br>{record[3]['url']}  </span></p>
+  </br>{record[3]['url']}  </span></p>
 <p>&nbsp;</p>
 
 <hr contenteditable="false" data-ke-type="horizontalRule" data-ke-style="style3" />
@@ -187,7 +187,7 @@ def writer():
  </br>{record[4]['summary']}  </span></p>
 <p>&nbsp;</p>
 <p style="text-align: center;" data-ke-size="size16"><span style="font-family: 'Noto Serif KR';"> </span><br /><span style="font-family: 'Noto Serif KR';">
- </br>{record[4]['content']} </br>{record[4]['url']}  </span></p>
+  </br>{record[4]['url']}  </span></p>
 <p>&nbsp;</p>
 
 <hr contenteditable="false" data-ke-type="horizontalRule" data-ke-style="style3" />
@@ -196,7 +196,7 @@ def writer():
  </br>{record[5]['summary']}  </span></p>
 <p>&nbsp;</p>
 <p style="text-align: center;" data-ke-size="size16"><span style="font-family: 'Noto Serif KR';"> </span><br /><span style="font-family: 'Noto Serif KR';">
- </br>{record[5]['content']} </br>{record[5]['url']}  </span></p>
+  </br>{record[5]['url']}  </span></p>
 <p>&nbsp;</p>
 
 <hr contenteditable="false" data-ke-type="horizontalRule" data-ke-style="style3" />
@@ -205,7 +205,7 @@ def writer():
  </br>{record[6]['summary']}  </span></p>
 <p>&nbsp;</p>
 <p style="text-align: center;" data-ke-size="size16"><span style="font-family: 'Noto Serif KR';"> </span><br /><span style="font-family: 'Noto Serif KR';">
- </br>{record[6]['content']} </br>{record[6]['url']}  </span></p>
+ </br>{record[6]['url']}  </span></p>
 <p>&nbsp;</p>
 
 <hr contenteditable="false" data-ke-type="horizontalRule" data-ke-style="style3" />
@@ -214,7 +214,7 @@ def writer():
  </br>{record[7]['summary']}  </span></p>
 <p>&nbsp;</p>
 <p style="text-align: center;" data-ke-size="size16"><span style="font-family: 'Noto Serif KR';"> </span><br /><span style="font-family: 'Noto Serif KR';">
- </br>{record[7]['content']} </br>{record[7]['url']}  </span></p>
+  </br>{record[7]['url']}  </span></p>
 <p>&nbsp;</p>
 
 <hr contenteditable="false" data-ke-type="horizontalRule" data-ke-style="style3" />
@@ -223,7 +223,7 @@ def writer():
  </br>{record[8]['summary']}  </span></p>
 <p>&nbsp;</p>
 <p style="text-align: center;" data-ke-size="size16"><span style="font-family: 'Noto Serif KR';"> </span><br /><span style="font-family: 'Noto Serif KR';">
- </br>{record[8]['content']} </br>{record[8]['url']}  </span></p>
+  </br>{record[8]['url']}  </span></p>
 <p>&nbsp;</p>
 
 <hr contenteditable="false" data-ke-type="horizontalRule" data-ke-style="style3" />
@@ -232,7 +232,7 @@ def writer():
  </br>{record[9]['summary']}  </span></p>
 <p>&nbsp;</p>
 <p style="text-align: center;" data-ke-size="size16"><span style="font-family: 'Noto Serif KR';"> </span><br /><span style="font-family: 'Noto Serif KR';">
- </br>{record[9]['content']} </br>{record[9]['url']}  </span></p>
+  </br>{record[9]['url']}  </span></p>
 <p>&nbsp;</p>
 
 
