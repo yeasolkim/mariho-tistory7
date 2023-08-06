@@ -22,6 +22,9 @@ import os
 import openai
 import random
 
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
+
 #openai.api_key = os.environ["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"]
 openai.api_key = "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"
 
@@ -52,7 +55,14 @@ def truncate_text(text, max_tokens=3000):
 def clean_html(url):
     while (True):
         try:
-            response = requests.get(url)
+            session = requests.Session()
+            retry = Retry(connect=3, backoff_factor=0.5)
+            adapter = HTTPAdapter(max_retries=retry)
+            session.mount('http://', adapter)
+            session.mount('https://', adapter)
+
+            response = session.get(url)
+        # response = requests.get(url)
             # requests 오류 시 아래 urlopen 을 사용 하여 data 불러 오는데 끊김이 없도록 실행
         except:
             page = urlopen(url)
