@@ -29,10 +29,10 @@ openai.api_key = "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"
 ###########################################################
 # Helpers
 def build_summarizer(llm):
-    system_message = "assistant는 user의 내용을 bullet point 3줄로 요약하라. 영어인 경우 한국어로 번역해서 요약하라. 농담을 섞은 친근한 말투로 작성하라."
+    system_message = "assistant는 user의 내용을 bullet point 5줄로 요약하라. 영어인 경우 한국어로 전문가 수준으로 번역해서 자연스럽게 요약하라. 농담을 섞은 친근한 말투로 작성하라."
     system_message_prompt = SystemMessage(content=system_message)
 
-    human_template = "{text}\n---\n위 내용을 bullet point로 3줄로 한국어로 요약하라. 농담을 섞은 친근한 말투로 작성하라."
+    human_template = "{text}\n---\n위 내용을 bullet point로 5줄로 한국어로 자연스럽게 전문가 수준으로 요약하라. 농담을 섞은 친근한 말투로 작성하라."
     human_message_prompt = HumanMessagePromptTemplate.from_template(
         human_template)
 
@@ -113,7 +113,8 @@ summarizer = build_summarizer(llm)
 nasa_url = "https://api.nasa.gov/planetary/apod?api_key=rP3Xf5YvfJhYXyRHGVPtQkyJvof3TbqbKiUuuWBd"
 def writer():
 
-    star = random.choice(['임영웅', '정동원', '송가인', '영탁', '아이브', '장원영', 'BTS', '방탄소년단', '블랙핑크', '제니', '리사', '뉴진스', '여자아이돌', '남자아이돌', 'K-POP', '에스파', '유재석'])
+    star = random.choice(['임영웅', '정동원', '송가인', '영탁', '아이브', '장원영', 'BTS', '방탄소년단',
+                          '블랙핑크', '제니', '리사', '뉴진스', 'K-POP', '에스파', '르세라핌'])
 
     search_results = search.results(star, num_results=10)
     i = 0

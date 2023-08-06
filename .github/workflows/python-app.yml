@@ -33,6 +33,7 @@ jobs:
     - name: hero_writer
       run: |
         python hero_writer.py
+        python cafe_writer.py
         
     - name: environment
       env:
@@ -46,10 +47,33 @@ jobs:
     - name: news_writer
       run: |
         python news_writer.py
+        python sportsnews_writer.py
+        python house_news_writer.py
+
+    - name: environment
+      env:
+                      TI_CLIENT_ID: ${{ secrets.TI_CLIENT_ID }}
+                      TI_SECRET: ${{ secrets.TI_SECRET }}
+                      TI_CODE: ${{ secrets.TI_CODE }}
+                      TI_ACCESS_TOKEN: ${{ secrets.TI_ACCESS_TOKEN }}
+                      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      run: |
+                      bash setup_env.sh
     - name: stock_writer
       run: |
         python stock_writer.py
+
+    - name: environment
+      env:
+                          TI_CLIENT_ID: ${{ secrets.TI_CLIENT_ID }}
+                          TI_SECRET: ${{ secrets.TI_SECRET }}
+                          TI_CODE: ${{ secrets.TI_CODE }}
+                          TI_ACCESS_TOKEN: ${{ secrets.TI_ACCESS_TOKEN }}
+                          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      run: |
+                          bash setup_env.sh
     - name: trot_writer
       run: |
        python trot_writer.py
+       
           

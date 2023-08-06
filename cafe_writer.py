@@ -4,6 +4,7 @@ from typing import List
 import asyncio
 from concurrent.futures import ProcessPoolExecutor
 from datetime import datetime, timedelta
+from urllib.request import urlopen
 
 import requests
 from bs4 import BeautifulSoup
@@ -20,6 +21,7 @@ from langchain.utilities import DuckDuckGoSearchAPIWrapper
 import tiktoken
 import os
 import openai
+import random
 
 #openai.api_key = os.environ["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"]
 openai.api_key = "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"
@@ -60,8 +62,11 @@ def clean_html(url):
             # string to dictionary
             dic = json.loads(doc)
             result_dict = dic['result']['trades']
+
         else:
             break
+
+
     soup = BeautifulSoup(response.text, 'html.parser')
     text = ' '.join(soup.stripped_strings)
     return text
@@ -108,12 +113,13 @@ summarizer = build_summarizer(llm)
 nasa_url = "https://api.nasa.gov/planetary/apod?api_key=rP3Xf5YvfJhYXyRHGVPtQkyJvof3TbqbKiUuuWBd"
 def writer():
 
-    start_date = (datetime.now()).strftime('%Y-%m-%d')
-    star = random.choice(
-        ['오늘 속보', '오늘 뉴스', '긴급 속보', '최신 뉴스', '최신 속보', '오늘 주요 뉴스', '오늘 경제뉴스', '오늘 정치뉴스', '주요 경제뉴스',
-         '주요 정치뉴스', '주요 사회뉴스', '주요 세계뉴스', '오늘 세계뉴스', '오늘 과학뉴스', '주요 과학뉴스', '주요 IT뉴스', '오늘 IT뉴스'
-         ])
-    search_results = search.results(star, num_results=10)
+    star1 = random.choice(
+        ['떠오르는 ', '인기있는 ', '신상 ', ' ', '분위기 좋은 ', '필수 ',
+                           '대형 ',  '떠오르는 ', '핫한 ', '조용한 ',  '요즘 핫한 ', '요즘 인기있는 ', '유행하는 ', '인스타 '])
+    star2 = random.choice(
+        ['핫플', '전시회', '카페', '맛집', '미쉐린 선정 맛집', '미슐랭 맛집', '팝업스토어', '핫플레이스',
+          '베이커리', '빵집', '레스토랑', '오마카세', '여행지', '액티비티', '스토어', '소품샵'])
+    search_results = search.results(star1+start2, num_results=10)
     i = 0
     record=[0,0,0,0,0,0,0,0,0,0]
     for s in search_results:
@@ -123,7 +129,7 @@ def writer():
         content = clean_html(s['link'])
         full_content = f"제목: {s['title']}\n발췌: {s['snippet']}\n전문: {content}"
 
-        full_content_truncated = truncate_text(full_content, max_tokens=3500)
+        full_content_truncated = truncate_text(full_content, max_tokens=3000)
 
         summary = summarizer.run(text=full_content_truncated)
 
@@ -138,12 +144,12 @@ def writer():
 
 
 
-    title2 = f"오늘의 뉴스! {star}심층분석 ({start_date})"
+    title2 = f" BEST {star1+star2}  추천 HOT 10  "
 
     content2 = f'''
 <p style="text-align: center;" data-ke-size="size16"><span style="font-family: 'Noto Serif KR';"> </span><br />
-<span style="font-family: 'Noto Serif KR';">안녕하세요, 오늘의 {star}는 어떤 것들이 있을까요?!<br/> 
-오늘의 HOT한 {star}만 정리했습니다<br />
+<span style="font-family: 'Noto Serif KR';">안녕하세요, 오늘은 요즘 인기있는 {star}를 모두 모아봤습니다.!<br/> 
+따끈따끈하고 유익한 정보들로만 정리했습니다<br />
 링크도 있으니 함께 보시죠!</span></p>
 <p>&nbsp;</p>
 
@@ -221,8 +227,8 @@ def writer():
 
 
 <p style="text-align: center;" data-ke-size="size16"><span style="font-family: 'Noto Serif KR';"> </span><br />
-<span style="font-family: 'Noto Serif KR';">오늘도 이슈가 많은 하루였네요.<br />
-저는 내일도 유익한 뉴스를 가지고 오겠습니다., 편안한 하루 보내세요!</span></p>
+<span style="font-family: 'Noto Serif KR';">요즘 {star1+star2} 대한 소식이 이렇게 많이있네요~.<br />
+내일도 재미있고 유익한 소식 가져올테니 또 만나요, 즐거운 하루 보내세요!</span></p>
 <p>&nbsp;</p>
             '''
 
@@ -234,8 +240,8 @@ if __name__ == "__main__":
 
     blog_write(
         blog_name="honeybutterinfo",
-        category_id="953967",
-        title="[뉴스/시사]"+title2,
+        category_id="953968",
+        title="[취미]"+title2,
         content=content2,
-        tag='속보, 뉴스'
+        tag='핫플, 핫플레이스'
     )

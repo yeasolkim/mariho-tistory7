@@ -27,10 +27,10 @@ openai.api_key = "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"
 ###########################################################
 # Helpers
 def build_summarizer(llm):
-    system_message = "assistant는 user의 내용을 bullet point 3줄로 요약하라. 영어인 경우 한국어로 번역해서 요약하라."
+    system_message = "assistant는 user의 내용을 bullet point 5줄로 요약하라. 영어인 경우 한국어로 전문가 수준으로 번역해서 자연스럽게 요약하라. 농담을 섞은 친근한 말투로 작성하라."
     system_message_prompt = SystemMessage(content=system_message)
 
-    human_template = "{text}\n---\n위 내용을 bullet point로 3줄로 한국어로 요약해"
+    human_template = "{text}\n---\n위 내용을 bullet point로 5줄로 한국어로 자연스럽게 전문가 수준으로 요약하라. 농담을 섞은 친근한 말투로 작성하라."
     human_message_prompt = HumanMessagePromptTemplate.from_template(
         human_template)
 
@@ -110,7 +110,11 @@ nasa_url = "https://api.nasa.gov/planetary/apod?api_key=rP3Xf5YvfJhYXyRHGVPtQkyJ
 def writer():
 
     start_date = (datetime.now()).strftime('%Y-%m-%d')
-    search_results = search.results("오늘 급등주 테마주 주식 종목", num_results=10)
+    star = random.choice(
+        ['오늘 주요 주식 종목', '오늘 급등주', '오늘 주요주식', '오늘 거래량 많은 주식', '주요 주식뉴스', '오늘 주목할 주식 종목', '오늘 거래량 상위 종목'
+         ,'오늘 테마주', '요즘 핫한 테마주', '주목할 테마주', '세계증시', '오늘 코스피 주요 뉴스', '오늘 한국증시 주요뉴스', '나스닥 주요뉴스', '코스닥 주요뉴스'])
+    search_results = search.results(star, num_results=10)
+
     i = 0
     record=[0,0,0,0,0,0,0,0,0,0]
     for s in search_results:

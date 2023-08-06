@@ -110,8 +110,9 @@ def writer():
 
     start_date = (datetime.now()).strftime('%Y-%m-%d')
     star = random.choice(
-        ['오늘 속보', '오늘 뉴스', '긴급 속보', '최신 뉴스', '최신 속보', '오늘 주요 뉴스', '오늘 경제뉴스', '오늘 정치뉴스', '주요 경제뉴스',
-         '주요 정치뉴스', '주요 사회뉴스', '주요 세계뉴스', '오늘 세계뉴스', '오늘 과학뉴스', '주요 과학뉴스', '주요 IT뉴스', '오늘 IT뉴스'
+        ['오늘 부동산뉴스', '주요 분양소식', '주요 부동산뉴스', '최신 부동산 소식', '주요 실거래가', '최신 강남 부동산 소식', '최신 서초구 부동산 뉴스'
+,'주요 서울 부동산 뉴스', '주요 수도권 부동산 소식','성남 부동산 뉴스', '용인시 부동산 뉴스', '성남시 부동산 뉴스', '분당 부동산 소식', '수원시 부동산 소식'
+         , '일산 부동산 뉴스', '인천 부동산 뉴스', '하남 부동산 뉴스', '최근 아파트 실거래가', '최근 아파트 분양', '주요 아파트 분양소식'
          ])
     search_results = search.results(star, num_results=10)
     i = 0
@@ -222,7 +223,7 @@ def writer():
 
 <p style="text-align: center;" data-ke-size="size16"><span style="font-family: 'Noto Serif KR';"> </span><br />
 <span style="font-family: 'Noto Serif KR';">오늘도 이슈가 많은 하루였네요.<br />
-저는 내일도 유익한 뉴스를 가지고 오겠습니다., 편안한 하루 보내세요!</span></p>
+저는 내일도 새로운 뉴스를 가지고 오겠습니다., 편안한 하루 보내세요!</span></p>
 <p>&nbsp;</p>
             '''
 
@@ -237,5 +238,5 @@ if __name__ == "__main__":
         category_id="953967",
         title="[뉴스/시사]"+title2,
         content=content2,
-        tag='속보, 뉴스'
+        tag=''
     )

@@ -110,10 +110,9 @@ def writer():
 
     start_date = (datetime.now()).strftime('%Y-%m-%d')
     star = random.choice(
-        ['오늘 속보', '오늘 뉴스', '긴급 속보', '최신 뉴스', '최신 속보', '오늘 주요 뉴스', '오늘 경제뉴스', '오늘 정치뉴스', '주요 경제뉴스',
-         '주요 정치뉴스', '주요 사회뉴스', '주요 세계뉴스', '오늘 세계뉴스', '오늘 과학뉴스', '주요 과학뉴스', '주요 IT뉴스', '오늘 IT뉴스'
-         ])
+        ['오늘 스포츠뉴스', '오늘 스포츠경기', '오늘 야구 뉴스', '오늘 축구 뉴스', '오늘 해외축구', '오늘 해외야구', '주요 스포츠뉴스', '주요 스포츠경기'])
     search_results = search.results(star, num_results=10)
+
     i = 0
     record=[0,0,0,0,0,0,0,0,0,0]
     for s in search_results:
@@ -138,12 +137,12 @@ def writer():
 
 
 
-    title2 = f"오늘의 뉴스! {star}심층분석 ({start_date})"
+    title2 = f"주요 스포츠 뉴스! {star} ! ({start_date})"
 
     content2 = f'''
 <p style="text-align: center;" data-ke-size="size16"><span style="font-family: 'Noto Serif KR';"> </span><br />
-<span style="font-family: 'Noto Serif KR';">안녕하세요, 오늘의 {star}는 어떤 것들이 있을까요?!<br/> 
-오늘의 HOT한 {star}만 정리했습니다<br />
+<span style="font-family: 'Noto Serif KR';">안녕하세요, 오늘의 스포츠 뉴스는 어떤 것들이 있을까요?!<br/> 
+오늘 핫한 이슈만 정리했습니다<br />
 링크도 있으니 함께 보시죠!</span></p>
 <p>&nbsp;</p>
 
@@ -221,8 +220,8 @@ def writer():
 
 
 <p style="text-align: center;" data-ke-size="size16"><span style="font-family: 'Noto Serif KR';"> </span><br />
-<span style="font-family: 'Noto Serif KR';">오늘도 이슈가 많은 하루였네요.<br />
-저는 내일도 유익한 뉴스를 가지고 오겠습니다., 편안한 하루 보내세요!</span></p>
+<span style="font-family: 'Noto Serif KR';">오늘도 핫한 스포츠계였네요.<br />
+저는 내일도 재미있는 스포츠계 소식을 가지고 오겠습니다., 에너지 넘치는 하루 보내세요!</span></p>
 <p>&nbsp;</p>
             '''
 
@@ -237,5 +236,5 @@ if __name__ == "__main__":
         category_id="953967",
         title="[뉴스/시사]"+title2,
         content=content2,
-        tag='속보, 뉴스'
+        tag='속보, 뉴스, 스포츠, sports, 야구, 축구, 스포츠뉴스, 경기'
     )

@@ -27,10 +27,10 @@ openai.api_key = "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"
 ###########################################################
 # Helpers
 def build_summarizer(llm):
-    system_message = "assistant는 user의 내용을 bullet point 3줄로 요약하라. 영어인 경우 한국어로 번역해서 요약하라."
+    system_message = "assistant는 user의 내용을 bullet point 5줄로 요약하라. 영어인 경우 한국어로 전문가 수준으로 번역해서 자연스럽게 요약하라. 농담을 섞은 친근한 말투로 작성하라."
     system_message_prompt = SystemMessage(content=system_message)
 
-    human_template = "{text}\n---\n위 내용을 bullet point로 3줄로 한국어로 요약해"
+    human_template = "{text}\n---\n위 내용을 bullet point로 5줄로 한국어로 자연스럽게 전문가 수준으로 요약하라. 농담을 섞은 친근한 말투로 작성하라."
     human_message_prompt = HumanMessagePromptTemplate.from_template(
         human_template)
 
@@ -110,7 +110,10 @@ nasa_url = "https://api.nasa.gov/planetary/apod?api_key=rP3Xf5YvfJhYXyRHGVPtQkyJ
 def writer():
 
     start_date = (datetime.now()).strftime('%Y-%m-%d')
-    search_results = search.results("오늘 트로트 뉴스", num_results=10)
+    star = random.choice(
+        ['오늘 트로트 소식', '오늘 가요계 뉴스', '오늘 연예계 소식', '최신 연예계 속보', '핫한 연예계 소식', '오늘 주요 연예계 소식'])
+    search_results = search.results(star, num_results=10)
+
     i = 0
     record=[0,0,0,0,0,0,0,0,0,0]
     for s in search_results:
@@ -135,12 +138,12 @@ def writer():
 
 
 
-    title2 = f"오늘의 트로트 뉴스 모음! 핫 이슈만 모았습니다 ({start_date})"
+    title2 = f"오늘의 {star} 모음! 핫 이슈만 모았습니다 ({start_date})"
 
     content2 = f'''
 <p style="text-align: center;" data-ke-size="size16"><span style="font-family: 'Noto Serif KR';"> </span><br />
-<span style="font-family: 'Noto Serif KR';">안녕하세요, 오늘 트로트계에는 어떤 뉴스들이 HOT했을까요?!<br/> 
-오늘 뜬 따끈따끈한 뉴스들만 모아왔습니다.<br />
+<span style="font-family: 'Noto Serif KR';">안녕하세요, 오늘은 어떤 뉴스들이 HOT했을까요?!<br/> 
+오늘 뜬 따끈따끈한 {star}들만 모아왔습니다.<br />
 링크도 있으니 관심있는 기사는 클릭해보세요</span></p>
 <p>&nbsp;</p>
 
@@ -220,7 +223,7 @@ def writer():
 
 <p style="text-align: center;" data-ke-size="size16"><span style="font-family: 'Noto Serif KR';"> </span><br />
 <span style="font-family: 'Noto Serif KR';">오늘은 이런 일들이 있었군요!<br />
-내일도 저는 트로트 소식을 한가득 가져올께요~, 오늘 하루 행복하게 마무리하시구요</span></p>
+내일도 저는 재미있는 소식들 한가득 가져올께요~, 오늘 하루 행복하게 마무리하세요</span></p>
 <p>&nbsp;</p>
             '''
 
@@ -235,5 +238,5 @@ if __name__ == "__main__":
         category_id="953968",
         title="[트롯/취미]"+title2,
         content=content2,
-        tag='트롯, 임영웅, 트로트, 영탁, 정동원, 송가인, 가수, 영웅, 미스터트롯, 미스터트로트'
+        tag='연예예'
     )
