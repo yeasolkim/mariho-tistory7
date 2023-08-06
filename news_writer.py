@@ -20,6 +20,7 @@ from langchain.utilities import DuckDuckGoSearchAPIWrapper
 import tiktoken
 import os
 import openai
+import random
 
 #openai.api_key = os.environ["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"]
 openai.api_key = "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"
