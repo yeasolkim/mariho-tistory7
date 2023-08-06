@@ -126,7 +126,7 @@ def writer():
 
     search_results = search.results(star, num_results=10)
     i = 0
-    record=[[0 for j in 1] for i in 10]
+    record = [[0 for j in range(1)] for t in range(10)]
     for s in search_results:
        # record[i] = Data(title=s['title'],content=s['content'],url=s['url'],summary=s['summary'])
         #record[i] = s

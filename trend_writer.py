@@ -130,7 +130,7 @@ def writer():
          '자격증', '직업', '아이돌','책','애니메이션','만화','넷플릭스 컨텐츠','디즈니플러스 컨텐츠','아마존프라임 컨텐츠','티빙 컨텐츠', '왓챠 컨텐츠', '유튜브 컨텐츠', '유튜버'])
     search_results = search.results(star1+star2, num_results=10)
     i = 0
-    record=[[0 for j in 1] for i in 10]
+    record = [[0 for j in range(1)] for t in range(10)]
     for s in search_results:
        # record[i] = Data(title=s['title'],content=s['content'],url=s['url'],summary=s['summary'])
         #record[i] = s
