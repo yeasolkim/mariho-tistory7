@@ -137,7 +137,7 @@ def writer():
 
 
 
-    title2 = f"주요 스포츠 뉴스! {star} ! ({start_date})"
+    title2 = f"주요 {star}!  모아보기 ! ({start_date})"
 
     content2 = f'''
 <p style="text-align: center;" data-ke-size="size16"><span style="font-family: 'Noto Serif KR';"> </span><br />

@@ -114,11 +114,10 @@ nasa_url = "https://api.nasa.gov/planetary/apod?api_key=rP3Xf5YvfJhYXyRHGVPtQkyJ
 def writer():
 
     star1 = random.choice(
-        ['떠오르는 ', '인기있는 ', '신상 ', ' ', '분위기 좋은 ', '필수 ',
-                           '대형 ',  '떠오르는 ', '핫한 ', '조용한 ',  '요즘 핫한 ', '요즘 인기있는 ', '유행하는 ', '인스타 '])
+        ['핫한 ', '요즘 핫한 ', '요즘 인기있는 ', '유행하는 '])
     star2 = random.choice(
-        ['핫플', '전시회', '카페', '맛집', '미쉐린 선정 맛집', '미슐랭 맛집', '팝업스토어', '핫플레이스',
-          '베이커리', '빵집', '레스토랑', '오마카세', '여행지', '액티비티', '스토어', '소품샵'])
+        ['밈', '노래', '게임','옷','캐릭터','음식','아이템', '영화','드라마',
+         '자격증', '직업', '아이돌','책','애니메이션','만화','넷플릭스 컨텐츠','디즈니플러스 컨텐츠','아마존프라임 컨텐츠','티빙 컨텐츠', '왓챠 컨텐츠', '유튜브 컨텐츠', '유튜버'])
     search_results = search.results(star1+star2, num_results=10)
     i = 0
     record=[0,0,0,0,0,0,0,0,0,0]
@@ -144,7 +143,7 @@ def writer():
 
 
 
-    title2 = f" BEST {star1+star2}  추천 HOT 10  "
+    title2 = f"  {star1+star2}  모음 BEST10  "
 
     content2 = f'''
 <p style="text-align: center;" data-ke-size="size16"><span style="font-family: 'Noto Serif KR';"> </span><br />
@@ -227,7 +226,7 @@ def writer():
 
 
 <p style="text-align: center;" data-ke-size="size16"><span style="font-family: 'Noto Serif KR';"> </span><br />
-<span style="font-family: 'Noto Serif KR';">요즘 {star1+star2} 대한 소식이 이렇게 많이있네요~.<br />
+<span style="font-family: 'Noto Serif KR';">요즘 {star1+star2} 대한 소식이 잘 보셨나요~?.<br />
 내일도 재미있고 유익한 소식 가져올테니 또 만나요, 즐거운 하루 보내세요!</span></p>
 <p>&nbsp;</p>
             '''
@@ -241,7 +240,7 @@ if __name__ == "__main__":
     blog_write(
         blog_name="honeybutterinfo",
         category_id="953968",
-        title="[핫플]"+title2,
+        title="[HOT]"+title2,
         content=content2,
-        tag='핫플, 핫플레이스'
+        tag=''
     )

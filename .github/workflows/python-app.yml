@@ -38,6 +38,10 @@ jobs:
     - name: cafe_writer
       run: |
         python cafe_writer.py
+
+    - name: trend_writer
+      run: |
+        python trend_writer.py
         
     - name: environment
       env:
