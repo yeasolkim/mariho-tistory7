@@ -66,7 +66,7 @@ def clean_html(url):
         except:
             page = urlopen(url)
             # bytes to string
-            doc = page.read().decode('utf-8')
+            doc = page.read().decode('utf-8', 'ignore')
             # string to dictionary
             dic = json.loads(doc)
             result_dict = dic['result']['trades']
