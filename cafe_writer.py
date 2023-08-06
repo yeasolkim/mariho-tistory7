@@ -119,7 +119,7 @@ def writer():
     star2 = random.choice(
         ['핫플', '전시회', '카페', '맛집', '미쉐린 선정 맛집', '미슐랭 맛집', '팝업스토어', '핫플레이스',
           '베이커리', '빵집', '레스토랑', '오마카세', '여행지', '액티비티', '스토어', '소품샵'])
-    search_results = search.results(star1+start2, num_results=10)
+    search_results = search.results(star1+star2, num_results=10)
     i = 0
     record=[0,0,0,0,0,0,0,0,0,0]
     for s in search_results:

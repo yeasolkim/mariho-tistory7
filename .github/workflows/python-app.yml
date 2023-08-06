@@ -30,9 +30,13 @@ jobs:
         OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       run: |
         bash setup_env.sh
+
     - name: hero_writer
       run: |
         python hero_writer.py
+
+    - name: cafe_writer
+      run: |
         python cafe_writer.py
         
     - name: environment
@@ -44,10 +48,17 @@ jobs:
             OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       run: |
             bash setup_env.sh
+
     - name: news_writer
       run: |
         python news_writer.py
+
+    - name: sports_news_writer
+      run: |
         python sportsnews_writer.py
+
+    - name: house_news_writer
+      run: |
         python house_news_writer.py
 
     - name: environment
@@ -59,6 +70,7 @@ jobs:
                       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       run: |
                       bash setup_env.sh
+
     - name: stock_writer
       run: |
         python stock_writer.py
@@ -72,6 +84,7 @@ jobs:
                           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       run: |
                           bash setup_env.sh
+
     - name: trot_writer
       run: |
        python trot_writer.py
