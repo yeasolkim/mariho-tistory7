@@ -42,16 +42,7 @@ jobs:
     - name: trend_writer
       run: |
         python trend_writer.py
-        
-    - name: environment
-      env:
-            TI_CLIENT_ID: ${{ secrets.TI_CLIENT_ID }}
-            TI_SECRET: ${{ secrets.TI_SECRET }}
-            TI_CODE: ${{ secrets.TI_CODE }}
-            TI_ACCESS_TOKEN: ${{ secrets.TI_ACCESS_TOKEN }}
-            OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-      run: |
-            bash setup_env.sh
+
 
     - name: news_writer
       run: |
@@ -65,29 +56,9 @@ jobs:
       run: |
         python house_news_writer.py
 
-    - name: environment
-      env:
-                      TI_CLIENT_ID: ${{ secrets.TI_CLIENT_ID }}
-                      TI_SECRET: ${{ secrets.TI_SECRET }}
-                      TI_CODE: ${{ secrets.TI_CODE }}
-                      TI_ACCESS_TOKEN: ${{ secrets.TI_ACCESS_TOKEN }}
-                      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-      run: |
-                      bash setup_env.sh
-
     - name: stock_writer
       run: |
         python stock_writer.py
-
-    - name: environment
-      env:
-                          TI_CLIENT_ID: ${{ secrets.TI_CLIENT_ID }}
-                          TI_SECRET: ${{ secrets.TI_SECRET }}
-                          TI_CODE: ${{ secrets.TI_CODE }}
-                          TI_ACCESS_TOKEN: ${{ secrets.TI_ACCESS_TOKEN }}
-                          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-      run: |
-                          bash setup_env.sh
 
     - name: trot_writer
       run: |
