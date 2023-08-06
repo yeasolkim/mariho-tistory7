@@ -129,7 +129,7 @@ def writer():
           '베이커리', '빵집', '레스토랑', '오마카세', '여행지', '액티비티', '스토어', '소품샵'])
     search_results = search.results(star1+star2, num_results=10)
     i = 0
-    record=[0,0,0,0,0,0,0,0,0,0]
+    record=[[0 for j in 1] for i in 10]
     for s in search_results:
        # record[i] = Data(title=s['title'],content=s['content'],url=s['url'],summary=s['summary'])
         #record[i] = s
