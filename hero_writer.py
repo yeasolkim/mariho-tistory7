@@ -122,7 +122,9 @@ nasa_url = "https://api.nasa.gov/planetary/apod?api_key=rP3Xf5YvfJhYXyRHGVPtQkyJ
 def writer():
 
     star = random.choice(['임영웅', '정동원', '송가인', '영탁', '아이브', '장원영', 'BTS', '방탄소년단',
-                          '블랙핑크', '제니', '리사', '뉴진스', 'K-POP', '에스파', '르세라핌'])
+                          '블랙핑크', '제니', '리사', '뉴진스', 'K-POP', '에스파', '르세라핌',
+                         '강다니엘','지민 (방탄소년단)','뷔 (방탄소년단)','셔누 (몬스타엑스)','진 (방탄소년단)','정국 (방탄소년단)','백현 (EXO)','슈가 (방탄소년단)','제이홉 (방탄소년단)','니키 (ENHYPEN)','디오 (EXO)',
+                          'RM (방탄소년단)','박지훈','김재환','세훈 (EXO)','카이 (EXO)','찬열 (EXO)','수호(EXO)','김우석', '하성운'])
 
     search_results = search.results(star, num_results=10)
     i = 0
