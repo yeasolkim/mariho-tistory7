@@ -21,7 +21,7 @@ import tiktoken
 import os
 import openai
 import random
-from time import sleep
+import time
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 
