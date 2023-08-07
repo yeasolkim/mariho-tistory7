@@ -35,9 +35,7 @@ jobs:
     - name: hero_writer
       run: |
         python hero_writer.py
-    - name: stock_writer2
-      run: |
-        python stock_writer.py
+
 
     - name: environment
       env:
@@ -66,11 +64,6 @@ jobs:
       run: |
         bash setup_env.sh
 
-  
-
-    - name: trend_writer2
-      run: |
-        python trend_writer.py
 
     - name: today
       run: |
@@ -91,11 +84,4 @@ jobs:
       run: |
         python stock_writer.py
         
-    - name: cafe_writer2
-      run: |
-        python cafe_writer.py
 
-       
-    - name: hero_writer2
-      run: |
-        python hero_writer.py
