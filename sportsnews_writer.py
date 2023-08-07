@@ -21,7 +21,7 @@ import tiktoken
 import os
 import openai
 import random
-
+import time
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 
@@ -61,10 +61,11 @@ def clean_html(url):
             session.mount('http://', adapter)
             session.mount('https://', adapter)
 
-            response = session.get(url)
+            response = session.get(url, , verify=False)
         # response = requests.get(url)
             # requests 오류 시 아래 urlopen 을 사용 하여 data 불러 오는데 끊김이 없도록 실행
         except:
+            time.sleep(5)
             page = urlopen(url)
             # bytes to string
             doc = page.read().decode('utf-8', 'ignore')
