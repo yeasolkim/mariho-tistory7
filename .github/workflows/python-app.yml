@@ -35,9 +35,9 @@ jobs:
     - name: hero_writer
       run: |
         python hero_writer.py
-    - name: hero_writer2
+    - name: stock_writer2
       run: |
-        python hero_writer.py
+        python stock_writer.py
 
     - name: environment
       env:
@@ -48,32 +48,30 @@ jobs:
         OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       run: |
         bash setup_env.sh
-
-    - name: cafe_writer
-      run: |
-        python cafe_writer.py
-    - name: cafe_writer2
-      run: |
-        python cafe_writer.py
-
-    - name: environment
-      env:
-        TI_CLIENT_ID: ${{ secrets.TI_CLIENT_ID }}
-        TI_SECRET: ${{ secrets.TI_SECRET }}
-        TI_CODE: ${{ secrets.TI_CODE }}
-        TI_ACCESS_TOKEN: ${{ secrets.TI_ACCESS_TOKEN }}
-        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-      run: |
-        bash setup_env.sh
-
     - name: trend_writer
       run: |
         python trend_writer.py
+    - name: cafe_writer
+      run: |
+        python cafe_writer.py
+    
+
+    - name: environment
+      env:
+        TI_CLIENT_ID: ${{ secrets.TI_CLIENT_ID }}
+        TI_SECRET: ${{ secrets.TI_SECRET }}
+        TI_CODE: ${{ secrets.TI_CODE }}
+        TI_ACCESS_TOKEN: ${{ secrets.TI_ACCESS_TOKEN }}
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      run: |
+        bash setup_env.sh
+
+  
 
     - name: trend_writer2
       run: |
         python trend_writer.py
-    
+
     - name: today
       run: |
         python today.py
@@ -92,9 +90,12 @@ jobs:
     - name: stock_writer
       run: |
         python stock_writer.py
-    - name: stock_writer2
+        
+    - name: cafe_writer2
       run: |
-        python stock_writer.py
+        python cafe_writer.py
 
        
-          
+    - name: hero_writer2
+      run: |
+        python hero_writer.py
