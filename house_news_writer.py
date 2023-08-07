@@ -126,7 +126,7 @@ def writer():
 ,'주요 서울 부동산 뉴스', '주요 수도권 부동산 소식','성남 부동산 뉴스', '용인시 부동산 뉴스', '성남시 부동산 뉴스', '분당 부동산 소식', '수원시 부동산 소식'
          , '일산 부동산 뉴스', '인천 부동산 뉴스', '하남 부동산 뉴스', '최근 아파트 실거래가', '최근 아파트 분양', '주요 아파트 분양소식'
          ])
-    search_results = search.results(star, num_results=10)
+    search_results = search.results(star, num_results=5)
     i = 0
     record = [[0 for j in range(1)] for t in range(10)]
     for s in search_results:
@@ -186,50 +186,7 @@ def writer():
   <a href="{record[4]['url']}">원본 LINK 바로가기</a></span></p>
 <p>&nbsp;</p>
 
-<hr contenteditable="false" data-ke-type="horizontalRule" data-ke-style="style3" />
-<h3 style="text-align: center;" data-ke-size="size23"><br /><span style="font-family: 'Noto Serif KR';"><b>{record[5]['title']} </b></span></h3>
-<p style="text-align: center;" data-ke-size="size16"><span style="font-family: 'Noto Serif KR';"> </span><br /><span style="font-family: 'Noto Serif KR';">
- </br>{record[5]['summary']}  </span></p>
-<p>&nbsp;</p>
-<p style="text-align: center;" data-ke-size="size16"><span style="font-family: 'Noto Serif KR';"> </span><br /><span style="font-family: 'Noto Serif KR';">
-  <a href="{record[5]['url']}">원본 LINK 바로가기</a></span></p>
-<p>&nbsp;</p>
 
-<hr contenteditable="false" data-ke-type="horizontalRule" data-ke-style="style3" />
-<h3 style="text-align: center;" data-ke-size="size23"><br /><span style="font-family: 'Noto Serif KR';"><b>{record[6]['title']} </b></span></h3>
-<p style="text-align: center;" data-ke-size="size16"><span style="font-family: 'Noto Serif KR';"> </span><br /><span style="font-family: 'Noto Serif KR';">
- </br>{record[6]['summary']}  </span></p>
-<p>&nbsp;</p>
-<p style="text-align: center;" data-ke-size="size16"><span style="font-family: 'Noto Serif KR';"> </span><br /><span style="font-family: 'Noto Serif KR';">
- <a href="{record[6]['url']}">원본 LINK 바로가기</a></span></p>
-<p>&nbsp;</p>
-
-<hr contenteditable="false" data-ke-type="horizontalRule" data-ke-style="style3" />
-<h3 style="text-align: center;" data-ke-size="size23"><br /><span style="font-family: 'Noto Serif KR';"><b>{record[7]['title']} </b></span></h3>
-<p style="text-align: center;" data-ke-size="size16"><span style="font-family: 'Noto Serif KR';"> </span><br /><span style="font-family: 'Noto Serif KR';">
- </br>{record[7]['summary']}  </span></p>
-<p>&nbsp;</p>
-<p style="text-align: center;" data-ke-size="size16"><span style="font-family: 'Noto Serif KR';"> </span><br /><span style="font-family: 'Noto Serif KR';">
-  <a href="{record[7]['url']}">원본 LINK 바로가기</a> </span></p>
-<p>&nbsp;</p>
-
-<hr contenteditable="false" data-ke-type="horizontalRule" data-ke-style="style3" />
-<h3 style="text-align: center;" data-ke-size="size23"><br /><span style="font-family: 'Noto Serif KR';"><b>{record[8]['title']} </b></span></h3>
-<p style="text-align: center;" data-ke-size="size16"><span style="font-family: 'Noto Serif KR';"> </span><br /><span style="font-family: 'Noto Serif KR';">
- </br>{record[8]['summary']}  </span></p>
-<p>&nbsp;</p>
-<p style="text-align: center;" data-ke-size="size16"><span style="font-family: 'Noto Serif KR';"> </span><br /><span style="font-family: 'Noto Serif KR';">
-  <a href="{record[8]['url']}">원본 LINK 바로가기</a></span></p>
-<p>&nbsp;</p>
-
-<hr contenteditable="false" data-ke-type="horizontalRule" data-ke-style="style3" />
-<h3 style="text-align: center;" data-ke-size="size23"><br /><span style="font-family: 'Noto Serif KR';"><b>{record[9]['title']} </b></span></h3>
-<p style="text-align: center;" data-ke-size="size16"><span style="font-family: 'Noto Serif KR';"> </span><br /><span style="font-family: 'Noto Serif KR';">
- </br>{record[9]['summary']}  </span></p>
-<p>&nbsp;</p>
-<p style="text-align: center;" data-ke-size="size16"><span style="font-family: 'Noto Serif KR';"> </span><br /><span style="font-family: 'Noto Serif KR';">
-  <a href="{record[9]['url']}">원본 LINK 바로가기</a></span></p>
-<p>&nbsp;</p>
 
 
 
