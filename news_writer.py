@@ -125,7 +125,7 @@ def writer():
         ['오늘 속보', '오늘 뉴스', '긴급 속보', '최신 뉴스', '최신 속보', '오늘 주요 뉴스', '오늘 경제뉴스', '오늘 정치뉴스', '주요 경제뉴스',
          '주요 정치뉴스', '주요 사회뉴스', '주요 세계뉴스', '오늘 세계뉴스', '오늘 과학뉴스', '주요 과학뉴스', '주요 IT뉴스', '오늘 IT뉴스'
          ])
-    search_results = search.results(star, num_results=10)
+    search_results = search.results(star, num_results=5)
     i = 0
     record=[[0 for j in range(1)] for t in range(10)]
     for s in search_results:
@@ -183,51 +183,6 @@ def writer():
 <p>&nbsp;</p>
 <p style="text-align: center;" data-ke-size="size16"><span style="font-family: 'Noto Serif KR';"> </span><br /><span style="font-family: 'Noto Serif KR';">
   <a href="{record[4]['url']}">원본 LINK 바로가기</a></span></p>
-<p>&nbsp;</p>
-
-<hr contenteditable="false" data-ke-type="horizontalRule" data-ke-style="style3" />
-<h3 style="text-align: center;" data-ke-size="size23"><br /><span style="font-family: 'Noto Serif KR';"><b>{record[5]['title']} </b></span></h3>
-<p style="text-align: center;" data-ke-size="size16"><span style="font-family: 'Noto Serif KR';"> </span><br /><span style="font-family: 'Noto Serif KR';">
- </br>{record[5]['summary']}  </span></p>
-<p>&nbsp;</p>
-<p style="text-align: center;" data-ke-size="size16"><span style="font-family: 'Noto Serif KR';"> </span><br /><span style="font-family: 'Noto Serif KR';">
-  <a href="{record[5]['url']}">원본 LINK 바로가기</a></span></p>
-<p>&nbsp;</p>
-
-<hr contenteditable="false" data-ke-type="horizontalRule" data-ke-style="style3" />
-<h3 style="text-align: center;" data-ke-size="size23"><br /><span style="font-family: 'Noto Serif KR';"><b>{record[6]['title']} </b></span></h3>
-<p style="text-align: center;" data-ke-size="size16"><span style="font-family: 'Noto Serif KR';"> </span><br /><span style="font-family: 'Noto Serif KR';">
- </br>{record[6]['summary']}  </span></p>
-<p>&nbsp;</p>
-<p style="text-align: center;" data-ke-size="size16"><span style="font-family: 'Noto Serif KR';"> </span><br /><span style="font-family: 'Noto Serif KR';">
- <a href="{record[6]['url']}">원본 LINK 바로가기</a></span></p>
-<p>&nbsp;</p>
-
-<hr contenteditable="false" data-ke-type="horizontalRule" data-ke-style="style3" />
-<h3 style="text-align: center;" data-ke-size="size23"><br /><span style="font-family: 'Noto Serif KR';"><b>{record[7]['title']} </b></span></h3>
-<p style="text-align: center;" data-ke-size="size16"><span style="font-family: 'Noto Serif KR';"> </span><br /><span style="font-family: 'Noto Serif KR';">
- </br>{record[7]['summary']}  </span></p>
-<p>&nbsp;</p>
-<p style="text-align: center;" data-ke-size="size16"><span style="font-family: 'Noto Serif KR';"> </span><br /><span style="font-family: 'Noto Serif KR';">
-  <a href="{record[7]['url']}">원본 LINK 바로가기</a> </span></p>
-<p>&nbsp;</p>
-
-<hr contenteditable="false" data-ke-type="horizontalRule" data-ke-style="style3" />
-<h3 style="text-align: center;" data-ke-size="size23"><br /><span style="font-family: 'Noto Serif KR';"><b>{record[8]['title']} </b></span></h3>
-<p style="text-align: center;" data-ke-size="size16"><span style="font-family: 'Noto Serif KR';"> </span><br /><span style="font-family: 'Noto Serif KR';">
- </br>{record[8]['summary']}  </span></p>
-<p>&nbsp;</p>
-<p style="text-align: center;" data-ke-size="size16"><span style="font-family: 'Noto Serif KR';"> </span><br /><span style="font-family: 'Noto Serif KR';">
-  <a href="{record[8]['url']}">원본 LINK 바로가기</a></span></p>
-<p>&nbsp;</p>
-
-<hr contenteditable="false" data-ke-type="horizontalRule" data-ke-style="style3" />
-<h3 style="text-align: center;" data-ke-size="size23"><br /><span style="font-family: 'Noto Serif KR';"><b>{record[9]['title']} </b></span></h3>
-<p style="text-align: center;" data-ke-size="size16"><span style="font-family: 'Noto Serif KR';"> </span><br /><span style="font-family: 'Noto Serif KR';">
- </br>{record[9]['summary']}  </span></p>
-<p>&nbsp;</p>
-<p style="text-align: center;" data-ke-size="size16"><span style="font-family: 'Noto Serif KR';"> </span><br /><span style="font-family: 'Noto Serif KR';">
-  <a href="{record[9]['url']}">원본 LINK 바로가기</a></span></p>
 <p>&nbsp;</p>
 
 
