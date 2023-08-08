@@ -32,26 +32,9 @@ jobs:
         OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       run: |
         bash setup_env.sh
-    - name: hero_writer
+    - name: today
       run: |
-        python hero_writer.py
+        python today.py
 
-
-    - name: environment
-      env:
-        TI_CLIENT_ID: ${{ secrets.TI_CLIENT_ID }}
-        TI_SECRET: ${{ secrets.TI_SECRET }}
-        TI_CODE: ${{ secrets.TI_CODE }}
-        TI_ACCESS_TOKEN: ${{ secrets.TI_ACCESS_TOKEN }}
-        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-      run: |
-        bash setup_env.sh
-    - name: trend_writer
-      run: |
-        python trend_writer.py
-    - name: cafe_writer
-      run: |
-        python cafe_writer.py
-    
         
 
