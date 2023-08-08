@@ -32,9 +32,9 @@ jobs:
         OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       run: |
         bash setup_env.sh
-    - name: today
+    - name: trot_writer
       run: |
-        python today.py
+        python trot_writer.py
 
         
 
